@@ -1,5 +1,7 @@
 package org.usfirst.frc.team997.robot;
+import org.usfirst.frc.team997.robot.subsystems.DriveTrain;
 
+//hi, how are you doing today? love jessica
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -12,6 +14,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * directory.
  */
 public class Robot extends IterativeRobot {
+	public static OI oi;
+	public static DriveTrain driveTrain;
+	
 	final String defaultAuto = "Default";
 	final String customAuto = "My Auto";
 	String autoSelected;
@@ -23,6 +28,15 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
+		
+		oi = new OI();
+		
+		try {
+			driveTrain = new DriveTrain();
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+		
 		chooser.addDefault("Default Auto", defaultAuto);
 		chooser.addObject("My Auto", customAuto);
 		SmartDashboard.putData("Auto choices", chooser);
