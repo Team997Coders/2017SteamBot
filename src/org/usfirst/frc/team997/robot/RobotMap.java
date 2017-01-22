@@ -25,7 +25,7 @@ public class RobotMap {
 	
 	public static class Values {
 		public static final double
-		shooterF = 0,
+		shooterF = 17,
 		shooterP = 0,
 		shooterI = 0,
 		shooterD = 0,
