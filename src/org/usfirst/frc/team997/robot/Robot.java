@@ -1,8 +1,10 @@
 package org.usfirst.frc.team997.robot;
+
 import org.usfirst.frc.team997.robot.subsystems.DriveTrain;
 
 //hi, how are you doing today? love jessica
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -36,6 +38,7 @@ public class Robot extends IterativeRobot {
 		} catch (Exception e){
 			e.printStackTrace();
 		}
+		
 		
 		chooser.addDefault("Default Auto", defaultAuto);
 		chooser.addObject("My Auto", customAuto);
@@ -82,6 +85,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
+		
 	}
 
 	/**
