@@ -1,12 +1,16 @@
 package org.usfirst.frc.team997.robot;
 
 import org.usfirst.frc.team997.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team997.robot.subsystems.Shooter;
 
 //hi, how are you doing today? love jessica
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import com.ctre.CANTalon;
+import com.ctre.CANTalon.FeedbackDevice;
+import com.ctre.CANTalon.TalonControlMode;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -16,13 +20,17 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * directory.
  */
 public class Robot extends IterativeRobot {
+
 	public static OI oi;
+	public static Shooter shooter;
 	public static DriveTrain driveTrain;
 	
 	final String defaultAuto = "Default";
 	final String customAuto = "My Auto";
 	String autoSelected;
 	SendableChooser<String> chooser = new SendableChooser<>();
+	
+	
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -30,6 +38,13 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
+		
+		shooter.shooterMotorMaster.setFeedbackDevice(FeedbackDevice.QuadEncoder);
+		shooter.shooterMotorMaster.reverseSensor(true);
+		shooter.shooterMotorMaster.configEncoderCodesPerRev(12);
+		
+		shooter.shooterMotorMaster.configNominalOutputVoltage(-6.0f, 0.0f);
+		shooter.shooterMotorMaster.configPeakOutputVoltage(-8.0f, 0.0f);
 		
 		oi = new OI();
 		
