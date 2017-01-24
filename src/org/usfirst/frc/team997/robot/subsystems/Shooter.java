@@ -20,12 +20,12 @@ public class Shooter extends PIDSubsystem {
         super("ShooterPID", RobotMap.Values.shooterF, RobotMap.Values.shooterP, 
         		RobotMap.Values.shooterI, RobotMap.Values.shooterD);
     	setAbsoluteTolerance(0.01);
-    	getPIDController().setContinuous(false);
-    	// Use these to get going:
     	
-    	// setSetpoint() -  Sets where the PID controller should move the system
-        //                  to
-        // enable() - Enables the PID controller.
+    	getPIDController().setContinuous(false);
+    	
+    	setSetpoint(RobotMap.Values.shooterSpeed); //-  Sets where the PID controller should move the system
+                     
+        enable(); //- Enables the PID controller.
     }
 
     public void initDefaultCommand() {
