@@ -25,12 +25,12 @@ public class RobotMap {
 	
 	public static class Values {
 		public static final double
-		shooterF = 17,
-		shooterP = 0,
-		shooterI = 0,
-		shooterD = 0,
+		shooterF = 3.965,
+		shooterP = 25,
+		shooterI = 0.0,
+		shooterD = 500,
 		
-		shooterSpeed = 0; //need actual speed.
+		shooterSpeed = 3500; 
 	}
 	
 }

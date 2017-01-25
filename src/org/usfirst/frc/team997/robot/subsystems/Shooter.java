@@ -14,6 +14,7 @@ public class Shooter extends PIDSubsystem {
 
 	
 	public static CANTalon shooterMotorMaster = new CANTalon(RobotMap.PDP.shooterMotorMaster);
+	public static CANTalon shooterMotorSlave = new CANTalon(RobotMap.PDP.shooterMotorSlave);
 	
     // Initialize your subsystem here
     public Shooter() {
@@ -40,7 +41,7 @@ public class Shooter extends PIDSubsystem {
         return shooterMotorMaster.getSpeed();
     }
 
-    protected void usePIDOutput(double output) {
+    public void usePIDOutput(double output) {
         // Use output to drive your system, like a motor
         // e.g. yourMotor.set(output);
     	shooterMotorMaster.pidWrite(output);

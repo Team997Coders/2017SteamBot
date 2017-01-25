@@ -38,11 +38,17 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		
 		shooter.shooterMotorMaster.setFeedbackDevice(FeedbackDevice.QuadEncoder);
-		shooter.shooterMotorMaster.reverseSensor(true);
-		shooter.shooterMotorMaster.configEncoderCodesPerRev(12);
+		shooter.shooterMotorMaster.reverseSensor(false);
+		shooter.shooterMotorMaster.configEncoderCodesPerRev(3);
 		
-		shooter.shooterMotorMaster.configNominalOutputVoltage(-6.0f, 0.0f);
-		shooter.shooterMotorMaster.configPeakOutputVoltage(-8.0f, 0.0f);
+		shooter.shooterMotorMaster.configNominalOutputVoltage(+0.0f, -0.0f);
+		shooter.shooterMotorMaster.configPeakOutputVoltage(+12.0f, -12.0f);
+		shooter.shooterMotorMaster.setProfile(0);
+		
+		shooter.shooterMotorMaster.enableBrakeMode(false);
+		shooter.shooterMotorSlave.enableBrakeMode(false);
+		shooter.shooterMotorMaster.setPosition(0);
+		shooter.shooterMotorMaster.setVoltageRampRate(24);
 		
 		oi = new OI();
 		
