@@ -1,5 +1,7 @@
 package org.usfirst.frc.team997.robot;
+import org.usfirst.frc.team997.robot.subsystems.Climber;
 import org.usfirst.frc.team997.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team997.robot.subsystems.Gatherer;
 
 //hi, how are you doing today? love jessica
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -16,6 +18,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static DriveTrain driveTrain;
+	public static Climber climber;
+	public static Gatherer gatherer;
 	
 	final String defaultAuto = "Default";
 	final String customAuto = "My Auto";
